@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 5.61 (Windows - x64)">
+  <section name="config">
+    <options closefiles="1" openmode="0" name="Part3"/>
+    <comment>
+      txrxtest&lt;-&gt;proxytest&lt;-&gt;remlbtest, with remlbtest on a separate machine. This is as
+      close to a final solution as I can get before going to real hardware on the remote end to
+      replace remlbtest.
+      roundtrip: ???ms, throughput: ~???
+    </comment>
+  </section>
+  <section name="data">
+    <explorer view="" pattern="0"/>
+    <log show="1"/>
+    <lastopen date="2018-01-03 13:14" user="sean" host="CHERNOBYL"/>
+  </section>
+  <section name="files">
+    <file name="assert.pbi">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="0" panelstate="+"/>
+      <fingerprint md5="616bc186dacc096563f79050d7aab880"/>
+    </file>
+    <file name="proxytest.pb">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="57e31bf917e52544d9532c4be17fd1c2"/>
+    </file>
+    <file name="remlbtest.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" panelstate="+"/>
+      <fingerprint md5="f82b029a57a7a63404e3720c9cb1bf9e"/>
+    </file>
+    <file name="test.pbi">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="ff36149d085009c1e2970014ee81c65b"/>
+    </file>
+    <file name="txrxtest.pb">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="591ae1ebf3f645124591e32e9da4e045"/>
+    </file>
+  </section>
+  <section name="targets">
+    <target name="txrxtest" enabled="1" default="0">
+      <inputfile value="txrxtest.pb"/>
+      <outputfile value="txrxtest.exe"/>
+      <executable value="txrxtest.exe"/>
+      <options thread="1" debug="1"/>
+      <warnings custom="1" type="error"/>
+    </target>
+    <target name="proxytest" enabled="1" default="1">
+      <inputfile value="proxytest.pb"/>
+      <outputfile value="proxytest.exe"/>
+      <executable value="proxytest.exe"/>
+      <options thread="1" debug="1"/>
+      <warnings custom="1" type="error"/>
+    </target>
+    <target name="remlbtest" enabled="1" default="0">
+      <inputfile value="remlbtest.pb"/>
+      <outputfile value="remlbtest.exe"/>
+      <executable value="remlbtest.exe"/>
+      <options thread="1" debug="1"/>
+      <warnings custom="1" type="error"/>
+    </target>
+  </section>
+</project>

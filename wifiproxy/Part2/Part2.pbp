@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 5.61 (Windows - x64)">
+  <section name="config">
+    <options closefiles="1" openmode="0" name="Part2"/>
+    <comment>
+      txrxtest&lt;-&gt;proxytest&lt;-&gt;remlbtest, with all processes on the same machine. This time added
+      udp between proxytest&lt;-&gt;remlbtest. This is a full-up loopback as envisioned in the final solution.
+      roundtrip: .05ms, throughput: ~41MB/s
+      Still good. Onto Part3
+    </comment>
+  </section>
+  <section name="data">
+    <explorer view="" pattern="0"/>
+    <log show="1"/>
+    <lastopen date="2017-12-25 12:10" user="sean" host="CHERNOBYL"/>
+  </section>
+  <section name="files">
+    <file name="assert.pbi">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="0" panelstate="+"/>
+      <fingerprint md5="77ce404a5bdcd7e2b6c7a186c1706ec5"/>
+    </file>
+    <file name="proxytest.pb">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="9249186720c357898f889a8c93ed2a98"/>
+    </file>
+    <file name="remlbtest.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="8c4a2bd28715069c26d0bc3aaa4c5f30"/>
+    </file>
+    <file name="test.pbi">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="af105b65c8e306905f127a4bf0c5b1af"/>
+    </file>
+    <file name="txrxtest.pb">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="747d1a015f4d784a35a838ff07e512b8"/>
+    </file>
+  </section>
+  <section name="targets">
+    <target name="txrxtest" enabled="1" default="1">
+      <inputfile value="txrxtest.pb"/>
+      <outputfile value="txrxtest.exe"/>
+      <executable value="txrxtest.exe"/>
+      <options thread="1" debug="1"/>
+      <warnings custom="1" type="error"/>
+    </target>
+    <target name="proxytest" enabled="1" default="0">
+      <inputfile value="proxytest.pb"/>
+      <outputfile value="proxytest.exe"/>
+      <executable value="proxytest.exe"/>
+      <options thread="1" debug="1"/>
+      <warnings custom="1" type="error"/>
+    </target>
+    <target name="remlbtest" enabled="1" default="0">
+      <inputfile value="remlbtest.pb"/>
+      <outputfile value="remlbtest.exe"/>
+      <executable value="remlbtest.exe"/>
+      <options thread="1" debug="1"/>
+      <warnings custom="1" type="error"/>
+    </target>
+  </section>
+</project>

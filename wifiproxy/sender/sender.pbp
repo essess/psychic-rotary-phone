@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 5.61 (Windows - x64)">
+  <section name="config">
+    <options closefiles="1" openmode="0" name="sender"/>
+    <comment>helper to send udp packets directly to esp8266</comment>
+  </section>
+  <section name="data">
+    <explorer view="" pattern="0"/>
+    <log show="1"/>
+    <lastopen date="2018-01-03 12:02" user="sean" host="CHERNOBYL"/>
+  </section>
+  <section name="files">
+    <file name="assert.pbi">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="0" panelstate="+"/>
+      <fingerprint md5="616bc186dacc096563f79050d7aab880"/>
+    </file>
+    <file name="sender.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="ce202b6c262f2bfa8d350d03d847cc57"/>
+    </file>
+    <file name="test.pbi">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="d819fd8ae9d9b6c6282f76a63fbc21fc"/>
+    </file>
+  </section>
+  <section name="targets">
+    <target name="sender" enabled="1" default="1">
+      <inputfile value="sender.pb"/>
+      <outputfile value="sender.exe"/>
+      <executable value="txrxtest.exe"/>
+      <options thread="1" debug="1"/>
+      <warnings custom="1" type="error"/>
+    </target>
+  </section>
+</project>

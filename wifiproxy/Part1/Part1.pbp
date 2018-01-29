@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 5.61 (Windows - x64)">
+  <section name="config">
+    <options closefiles="1" openmode="0" name="Part1"/>
+    <comment>
+      This is the local process&lt;-&gt;process loopback test to confirm minimum throughput and latencies
+      before moving onto the next step. No udp involved, each process handles each end of the virtual com
+      port. COM10-&gt;COM11-&gt;COM11-&gt;COM10, then calculate roundtrip time and derive throughput.
+      Ultimately arrived at ~.03ms roundtrip and ~75MB/s throughput.
+      Good enough to move onto Part2
+    </comment>
+  </section>
+  <section name="data">
+    <explorer view="" pattern="0"/>
+    <log show="1"/>
+    <lastopen date="2017-12-22 11:39" user="sean" host="CHERNOBYL"/>
+  </section>
+  <section name="files">
+    <file name="assert.pbi">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="0" panelstate="+"/>
+      <fingerprint md5="a68acbaa9881eae8366cdc97a97eb7be"/>
+    </file>
+    <file name="proxytest.pb">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="06503614b701e670f680a5477111bafd"/>
+    </file>
+    <file name="test.pbi">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="ab2cadfe46ba3b8381f51d7be4398a19"/>
+    </file>
+    <file name="txrxtest.pb">
+      <config load="1" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="4b02bebfca24844a79313e827e696a35"/>
+    </file>
+  </section>
+  <section name="targets">
+    <target name="txrxtest" enabled="1" default="1">
+      <inputfile value="txrxtest.pb"/>
+      <outputfile value="txrxtest.exe"/>
+      <executable value="txrxtest.exe"/>
+      <options debug="1"/>
+    </target>
+    <target name="proxytest" enabled="1" default="0">
+      <inputfile value="proxytest.pb"/>
+      <outputfile value="proxytest.exe"/>
+      <executable value="proxytest.exe"/>
+      <options debug="1"/>
+    </target>
+  </section>
+</project>
